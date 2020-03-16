@@ -15,6 +15,6 @@ Mar
 
 
 2~3 ISO tests for:
-1. 	Camber on handlingdynamics on 1 sports car w/ 1 set of tyres
+1. 	Camber on handling dynamics on 1 sports car w/ 1 set of tyres
 2.	transient behaviour
 

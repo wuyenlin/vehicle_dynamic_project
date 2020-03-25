@@ -11,6 +11,7 @@ Each file corresponds to a single camber angle test with values of:
 Below the maneuvers taken are listed for each test:
 
 Step Response Test
+
 START
 1. Acceleration to 80 km/h
 2. Steady-state condition for 10 secs
@@ -18,12 +19,15 @@ START
 4. Hold for 10 secs
 5. Back to 0 deg steering
 6. Hold for 10 secs
+
 END
 
 Sine Sweep Test
+
 START
 1. Acceleration to 80 km/h
 2. Steady-state condition for 10 secs
 3. Sine Sweep with amplitude of 50 deg with frequency from 1Hz to 5Hz
 4. Back to 0 deg steering and hold for 10 secs
+
 END

@@ -10,7 +10,7 @@ Each file corresponds to a single camber angle test with values of:
 
 Below the maneuvers taken are listed for each test:
 
-Step Response Test  
+<strong>Step Response Test</strong>  
 START
 1. Acceleration to 80 km/h
 2. Steady-state condition for 10 secs
@@ -21,9 +21,9 @@ START
 
 END
 
+  
 
-
-Sine Sweep Test  
+<strong>Sine Sweep Test</strong>  
 START
 1. Acceleration to 80 km/h
 2. Steady-state condition for 10 secs

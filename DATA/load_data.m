@@ -1,7 +1,6 @@
 % 1:VX, 2:Sideslip, 3:Yaw rate, 4:ay, 5:Steer, 6:Time
 clear all
 
-
 %loading step response data
 figure(1)
 tiledlayout(3,7)
@@ -75,3 +74,7 @@ for i = 12:21    % negative camber angles
     plot(sine_data{i}(:,6),sine_data{i}(:,5))
     title(['sine',num2str(i-11),'neg'])
 end
+
+
+
+

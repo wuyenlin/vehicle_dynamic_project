@@ -17,7 +17,8 @@ START
 3. Steer step to 20 deg
 4. Hold for 10 secs
 5. Back to 0 deg steering
-6. Hold for 10 secs  
+6. Hold for 10 secs
+
 END
 
 Sine Sweep Test  
@@ -25,5 +26,6 @@ START
 1. Acceleration to 80 km/h
 2. Steady-state condition for 10 secs
 3. Sine Sweep with amplitude of 50 deg with frequency from 1Hz to 5Hz
-4. Back to 0 deg steering and hold for 10 secs  
+4. Back to 0 deg steering and hold for 10 secs
+
 END

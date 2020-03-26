@@ -14,7 +14,9 @@ Mar
 
 
 
-2~3 ISO tests for:
-1. 	Camber on handling dynamics on 1 sports car w/ 1 set of tyres
-2.	transient behaviour
+Objective:
+1.	test tracks:	a) 8-shaped
+			b) circle
+			c) sinusoidal shaped
+2.	camber angle: +3 ~ -10 deg
 

@@ -78,12 +78,12 @@ legend('\gamma= 10\circ','\gamma= 5\circ','neutral','\gamma= -5\circ','\gamma= -
 
 %%
 figure(4);
-plot(ay_10(700:end), rad_10(700:end),'LineWidth',1.5);
+plot(ay_10(700:end), rad_10(700:end)*180/pi,'LineWidth',1.5);
 hold on;
-plot(ay_5(700:end), rad_5(700:end),'LineWidth',1.5);
-plot(ay_neu(700:end), rad_neu(700:end),'LineWidth',1.5);
-plot(ay_neg5(700:end), rad_neg5(700:end),'LineWidth',1.5);
-plot(ay_neg10(700:end), rad_neg10(700:end),'LineWidth',1.5);
+plot(ay_5(700:end), rad_5(700:end)*180/pi,'LineWidth',1.5);
+plot(ay_neu(700:end), rad_neu(700:end)*180/pi,'LineWidth',1.5);
+plot(ay_neg5(700:end), rad_neg5(700:end)*180/pi,'LineWidth',1.5);
+plot(ay_neg10(700:end), rad_neg10(700:end)*180/pi,'LineWidth',1.5);
 hold off;
 ylabel("Steering angle \delta [deg]");
 xlabel("Lateral acceleration a_y [m/s^2]");

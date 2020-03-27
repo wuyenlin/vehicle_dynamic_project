@@ -89,5 +89,6 @@ ylabel("Steering angle \delta [deg]");
 xlabel("Lateral acceleration a_y [m/s^2]");
 title("Steady state \delta vs a_y");
 grid on;
+grid minor;
 legend('\gamma= 10\circ','\gamma= 5\circ','neutral','\gamma= -5\circ','\gamma= -10\circ','Location','Southeast');
 

@@ -1,0 +1,23 @@
+data = cell(1,5);
+
+for i = 1:2
+    filename_pos = [num2str(5*i),'_camber.csv'];
+    filename_neg = [num2str(5*i),'neg_camber.csv'];
+    data{i} = importdata(filename_pos);
+    data{i+2} = importdata(filename_neg);
+end
+i = 5;
+filename = 'Neutral_SteerSSA_vs_steerangle.csv';
+data{i} = importdata(filename);
+
+
+figure(10);
+for i = 1:size(data,2)   
+    hold on;
+    plot(data{i}(:,7), data{i}(:,3));
+end
+title('Steady State');
+xlabel("Lateral acceleration a_y [m/s^2]");
+ylabel("Side slip angle");
+grid on;
+legend('\gamma= 5\circ','\gamma= 10\circ','\gamma= -5\circ','\gamma= -10\circ','neutral','Location','Northwest');

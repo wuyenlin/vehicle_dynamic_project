@@ -101,8 +101,9 @@ k = 11;   % zero camber angles
 filename = ['csv\step\step',num2str(0),'.csv'];
 step_data_r{k} = importdata(filename);
 plot(step_data_r{k}(:,6),step_data_r{k}(:,3),'LineWidth',2);
-lgd = legend('-1 deg','-5 deg','-10 deg','1 deg','5 deg','10 deg','0 deg');
-title(lgd,'Camber Angles');
+%lgd = legend('-1 deg','-5 deg','-10 deg','1 deg','5 deg','10 deg','0 deg');
+%title(lgd,'Camber Angles');
+legend("\gamma= -1\circ","\gamma= -5\circ","\gamma= -10\circ","\gamma= 1\circ","\gamma= 5\circ","\gamma= 10\circ", "neutral","Location","northeast");
 xlabel('Time t [s]');
 ylabel('Yaw rate r [rad/s]');
 title('Step Response: r vs t');
@@ -136,8 +137,9 @@ k=11;   % zero camber angles
 filename = ['csv\step\step',num2str(0),'.csv'];
 step_data_r{k} = importdata(filename);
 plot(step_data_r{k}(:,6),step_data_r{k}(:,4),'LineWidth',2);
-lgd = legend('-1 deg','-5 deg','-10 deg','1 deg','5 deg','10 deg','0 deg');
-title(lgd,'Camber Angles')
+% lgd = legend('-1 deg','-5 deg','-10 deg','1 deg','5 deg','10 deg','0 deg');
+% title(lgd,'Camber Angles')
+legend("\gamma= -1\circ","\gamma= -5\circ","\gamma= -10\circ","\gamma= 1\circ","\gamma= 5\circ","\gamma= 10\circ", "neutral","Location","northeast");
 xlabel('Time t [s]');
 ylabel('Lateral acceleration a_y[m/s^2]');
 title('Step Response: a_y vs t');
@@ -171,8 +173,9 @@ k=11;   % zero camber angles
 filename = ['csv\step\step',num2str(0),'.csv'];
 step_data_r{k} = importdata(filename);
 plot(step_data_r{k}(:,6),step_data_r{k}(:,2)*180/pi,'LineWidth',2);
-lgd = legend('-1 deg','-5 deg','-10 deg','1 deg','5 deg','10 deg','0 deg','Location','Southeast');
-title(lgd,'Camber Angles')
+% lgd = legend('-1 deg','-5 deg','-10 deg','1 deg','5 deg','10 deg','0 deg','Location','Southeast');
+% title(lgd,'Camber Angles')
+legend("\gamma= -1\circ","\gamma= -5\circ","\gamma= -10\circ","\gamma= 1\circ","\gamma= 5\circ","\gamma= 10\circ", "neutral","Location","Southeast");
 xlabel('Time t [s]');
 ylabel('Side slip angle \alpha [deg]');
 title('Step Response: \alpha vs t');
@@ -202,8 +205,9 @@ for i = [12,16,21]    % negative camber angles
     hold on;
     plot(sine_data_r{i}(:,6),sine_data_r{i}(:,2),'LineWidth',2);
 end
-lgd = legend('-1 deg','-5 deg','-10 deg','1 deg','5 deg','10 deg','0 deg');
-title(lgd,'Camber Angles')
+% lgd = legend('-1 deg','-5 deg','-10 deg','1 deg','5 deg','10 deg','0 deg');
+% title(lgd,'Camber Angles')
+legend("\gamma= -1\circ","\gamma= -5\circ","\gamma= -10\circ","\gamma= 1\circ","\gamma= 5\circ","\gamma= 10\circ", "neutral","Location","Southeast");
 xlabel('Time t [s]');
 ylabel('Yaw velocity [rad/s]');
 title('Sine Response: Yaw velocity vs t');

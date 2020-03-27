@@ -84,32 +84,32 @@ step_data_r = cell(1,21);
 for i= [1,5,10]    % positive camber angles
     filename = ['csv\step\step',num2str(i),'neg.csv'];
     step_data_r{i} = importdata(filename);
-    hold on
-    plot(step_data_r{i}(:,6),step_data_r{i}(:,3))
-    title(['step',num2str(i),'neg'])
+    hold on;
+    plot(step_data_r{i}(:,6),step_data_r{i}(:,3),'LineWidth',2);
+    title(['step',num2str(i),'neg']);
  end
 hold on
 for j = [1,5,10]    % positive camber angles
     filename = ['csv\step\step',num2str(j),'pos.csv'];
     step_data_r{j+11} = importdata(filename);
     hold on
-    plot(step_data_r{j+11}(:,6),step_data_r{j+11}(:,3))
+    plot(step_data_r{j+11}(:,6),step_data_r{j+11}(:,3),'LineWidth',2);
     title(['step',num2str(j),'neg']);
  end
-hold on
-k=11;   % zero camber angles
+hold on;
+k = 11;   % zero camber angles
 filename = ['csv\step\step',num2str(0),'.csv'];
 step_data_r{k} = importdata(filename);
-plot(step_data_r{k}(:,6),step_data_r{k}(:,3));
+plot(step_data_r{k}(:,6),step_data_r{k}(:,3),'LineWidth',2);
 lgd = legend('-1 deg','-5 deg','-10 deg','1 deg','5 deg','10 deg','0 deg');
-title(lgd,'Camber Angles')
-xlabel('Time step');
-ylabel('Yaw velocity (rad/sec)');
-title('Step Response of the car');
-xlim([20,35]);
-ylim([0.08,0.14]);
-grid on
-grid minor
+title(lgd,'Camber Angles');
+xlabel('Time t [s]');
+ylabel('Yaw rate r [rad/s]');
+title('Step Response: r vs t');
+xlim([20,37]);
+ylim([0.12,0.136]);
+grid on;
+grid minor;
 %% 3
 % Plot for the Lateral acceleration for step input
 clc;
@@ -119,30 +119,30 @@ step_data_r = cell(1,21);
 for i= [1,5,10]    % positive camber angles
     filename = ['csv\step\step',num2str(i),'neg.csv'];
     step_data_r{i} = importdata(filename);
-    hold on
-    plot(step_data_r{i}(:,6),step_data_r{i}(:,4))
-    title(['step',num2str(i),'neg'])
+    hold on;
+    plot(step_data_r{i}(:,6),step_data_r{i}(:,4),'LineWidth',2);
+    title(['step',num2str(i),'neg']);
  end
 hold on
 for j = [1,5,10]    % positive camber angles
     filename = ['csv\step\step',num2str(j),'pos.csv'];
     step_data_r{j+11} = importdata(filename);
-    hold on
-    plot(step_data_r{j+11}(:,6),step_data_r{j+11}(:,4))
+    hold on;
+    plot(step_data_r{j+11}(:,6),step_data_r{j+11}(:,4),'LineWidth',2);
     title(['step',num2str(j),'neg']);
  end
 hold on
 k=11;   % zero camber angles
 filename = ['csv\step\step',num2str(0),'.csv'];
 step_data_r{k} = importdata(filename);
-plot(step_data_r{k}(:,6),step_data_r{k}(:,4));
+plot(step_data_r{k}(:,6),step_data_r{k}(:,4),'LineWidth',2);
 lgd = legend('-1 deg','-5 deg','-10 deg','1 deg','5 deg','10 deg','0 deg');
 title(lgd,'Camber Angles')
-xlabel('Time step');
-ylabel('Lateral acceleration (m/sec^2)');
-title('Step Response of the car');
+xlabel('Time t [s]');
+ylabel('Lateral acceleration a_y[m/s^2]');
+title('Step Response: a_y vs t');
 xlim([20,35]);
-ylim([2,4]);
+ylim([3,4]);
 grid on
 grid minor
 %% 4
@@ -154,30 +154,30 @@ step_data_r = cell(1,21);
 for i= [1,5,10]    % positive camber angles
     filename = ['csv\step\step',num2str(i),'neg.csv'];
     step_data_r{i} = importdata(filename);
-    hold on
-    plot(step_data_r{i}(:,6),step_data_r{i}(:,2))
-    title(['step',num2str(i),'neg'])
+    hold on;
+    plot(step_data_r{i}(:,6),step_data_r{i}(:,2)*180/pi,'LineWidth',2);
+    title(['step',num2str(i),'neg']);
  end
 hold on
 for j = [1,5,10]    % positive camber angles
     filename = ['csv\step\step',num2str(j),'pos.csv'];
     step_data_r{j+11} = importdata(filename);
-    hold on
-    plot(step_data_r{j+11}(:,6),step_data_r{j+11}(:,2))
+    hold on;
+    plot(step_data_r{j+11}(:,6),step_data_r{j+11}(:,2)*180/pi,'LineWidth',2);
     title(['step',num2str(j),'neg']);
  end
 hold on
 k=11;   % zero camber angles
 filename = ['csv\step\step',num2str(0),'.csv'];
 step_data_r{k} = importdata(filename);
-plot(step_data_r{k}(:,6),step_data_r{k}(:,2));
-lgd = legend('-1 deg','-5 deg','-10 deg','1 deg','5 deg','10 deg','0 deg');
+plot(step_data_r{k}(:,6),step_data_r{k}(:,2)*180/pi,'LineWidth',2);
+lgd = legend('-1 deg','-5 deg','-10 deg','1 deg','5 deg','10 deg','0 deg','Location','Southeast');
 title(lgd,'Camber Angles')
-xlabel('Time step');
-ylabel('Side slip angle (rad)');
-title('Step Response of the car');
-xlim([20,35]);
-ylim([-6e-3,-3e-3]);
+xlabel('Time t [s]');
+ylabel('Side slip angle \alpha [deg]');
+title('Step Response: \alpha vs t');
+xlim([20,37]);
+%ylim([-6e-3,-3e-3]);
 grid on
 grid minor
 %% Sine wave response in Yaw velocity
@@ -187,23 +187,23 @@ sine_data_r = cell(1,21);
 for i = [1,5,10]   % positive camber angles
     filename = ['csv\sinewave\sine',num2str(i),'neg.csv'];
     sine_data_r{i} = importdata(filename);
-    hold on
-    plot(sine_data_r{i}(:,6),sine_data_r{i}(:,2))
+    hold on;
+    plot(sine_data_r{i}(:,6),sine_data_r{i}(:,2),'LineWidth',2);
 end
-hold on
+hold on;
 i=11;   % zero camber angles
 filename = ['csv\sinewave\sine',num2str(0),'.csv'];
 sine_data_r{i} = importdata(filename);
-hold on
-plot(sine_data_r{i}(:,6),sine_data_r{i}(:,2))
+hold on;
+%plot(sine_data_r{i}(:,6),sine_data_r{i}(:,2),'LineWidth',2);
 for i = [12,16,21]    % negative camber angles
     filename = ['csv\sinewave\sine',num2str(i-11),'pos.csv'];
     sine_data_r{i} = importdata(filename);
-    hold on
-    plot(sine_data_r{i}(:,6),sine_data_r{i}(:,2))
+    hold on;
+    plot(sine_data_r{i}(:,6),sine_data_r{i}(:,2),'LineWidth',2);
 end
 lgd = legend('-1 deg','-5 deg','-10 deg','1 deg','5 deg','10 deg','0 deg');
 title(lgd,'Camber Angles')
-xlabel('Time step');
-ylabel('Yaw velocity (rad/sec)');
-title('Sine Response of the car');
+xlabel('Time t [s]');
+ylabel('Yaw velocity [rad/s]');
+title('Sine Response: Yaw velocity vs t');

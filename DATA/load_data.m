@@ -1,6 +1,22 @@
 % 1:VX, 2:Sideslip, 3:Yaw rate, 4:ay, 5:Steer, 6:Time
 clear all
 
+% for i = 1:10
+%     filename = ['sinewave\sine',num2str(i),'neg'];
+%     s = xlsread(filename);
+%     writematrix(s,['csv\sinewave\sine',num2str(i),'neg.csv'])
+% end
+% 
+% for i = 1:10
+%     filename = ['sinewave\sine',num2str(i),'pos'];
+%     s = xlsread(filename);
+%     writematrix(s,['csv\sinewave\sine',num2str(i),'pos.csv'])
+% end
+% 
+% filename = ['sinewave\sine',num2str(0)];
+% s = xlsread(filename);
+% writematrix(s,['csv\sinewave\sine',num2str(0),'.csv'])
+
 %loading step response data
 figure(1)
 tiledlayout(3,7)

@@ -1,0 +1,32 @@
+clear all;
+load("ssa_swa.mat");
+
+figure(2);
+plot(t_neu, ay_neu,'LineWidth',1.5);
+hold on;
+plot(t_5, ay_5,'LineWidth',1.5);
+plot(t_10, ay_10,'LineWidth',1.5);
+plot(t_neg5, ay_neg5,'LineWidth',1.5);
+plot(t_neg10, ay_neg10,'LineWidth',1.5);
+hold off;
+xlabel("Time t [s]");
+ylabel("Lateral acceleration a_y [m/s^2]");
+title("Steady state a_y vs t");
+grid on;
+legend('neutral','\gamma= 5\circ','\gamma= 10\circ','\gamma= -5\circ','\gamma= -10\circ','Location','Northwest');
+%axis([0 35 -2 10]);
+
+figure(3);
+plot(t_neu, rad_neu,'LineWidth',1.5);
+hold on;
+plot(t_5, rad_5*180/pi,'LineWidth',1.5);
+plot(t_10, rad_10*180/pi,'LineWidth',1.5);
+plot(t_neg5, rad_neg5*180/pi,'LineWidth',1.5);
+plot(t_neg10, rad_neg10*180/pi,'LineWidth',1.5);
+hold off;
+xlabel("Time t [s]");
+ylabel("Steering angle \delta [deg]");
+title("Steady state \delta vs t");
+grid on;
+legend('neutral','\gamma= 5\circ','\gamma= 10\circ','\gamma= -5\circ','\gamma= -10\circ','Location','Northwest');
+%axis([0 35 -50 300]);

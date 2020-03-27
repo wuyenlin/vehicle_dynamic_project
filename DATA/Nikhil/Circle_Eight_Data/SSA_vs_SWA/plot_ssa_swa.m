@@ -19,6 +19,30 @@ legend("Neutral","\gamma=5 deg","\gamma=10 deg","\gamma=-5 deg","\gamma=-10 deg"
 grid on;
 axis([-0.6 1.6 -2 10]);
 
+
+%%
+% data = cell(1,5);
+% 
+% for i = 1:2
+%     filename_pos = [num2str(5*i),'_SSA_vs_SWA.csv'];
+%     filename_neg = [num2str(5*i),'neg_SSA_vs_SWA.csv'];
+%     data{i} = importdata(filename_pos);
+%     data{6-i} = importdata(filename_neg);
+% end
+% i = 3;
+% filename = 'Neutral_SteerSSA_vs_steerangle.csv';
+% data{i} = importdata(filename);
+% 
+% figure(1);
+% for i = 1:size(data,2)
+%     
+%     hold on;
+%     plot(data{i}(:,2), data{i}(:,1));
+%     plot(data{i}(:,2), data{i}(:,1));
+%     title('Steady State');
+% end
+
+
 %%
 clear all;
 load("ssa_swa.mat");
@@ -66,3 +90,4 @@ ylabel("Lateral acceleration a_y [m/s^2]");
 title("Steady state a_y vs \delta");
 grid on;
 legend('\gamma= 10\circ','\gamma= 5\circ','neutral','\gamma= -5\circ','\gamma= -10\circ','Location','Northwest');
+

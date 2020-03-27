@@ -1,5 +1,5 @@
 % 1:VX, 2:Sideslip, 3:Yaw rate, 4:ay, 5:Steer, 6:Time
-clear all
+clear all;
 
 %loading step response data
 figure(1)

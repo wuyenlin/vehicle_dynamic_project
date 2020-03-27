@@ -76,18 +76,18 @@ title("Steady state \delta vs t");
 grid on;
 legend('\gamma= 10\circ','\gamma= 5\circ','neutral','\gamma= -5\circ','\gamma= -10\circ','Location','Northwest');
 
-
+%%
 figure(4);
-plot(rad_10, ay_10,'LineWidth',1.5);
+plot(ay_10(700:end), rad_10(700:end),'LineWidth',1.5);
 hold on;
-plot(rad_5, ay_5,'LineWidth',1.5);
-plot(rad_neu, ay_neu,'LineWidth',1.5);
-plot(rad_neg5, ay_neg5,'LineWidth',1.5);
-plot(rad_neg10, ay_neg10,'LineWidth',1.5);
+plot(ay_5(700:end), rad_5(700:end),'LineWidth',1.5);
+plot(ay_neu(700:end), rad_neu(700:end),'LineWidth',1.5);
+plot(ay_neg5(700:end), rad_neg5(700:end),'LineWidth',1.5);
+plot(ay_neg10(700:end), rad_neg10(700:end),'LineWidth',1.5);
 hold off;
-xlabel("Steering angle \delta [deg]");
-ylabel("Lateral acceleration a_y [m/s^2]");
-title("Steady state a_y vs \delta");
+ylabel("Steering angle \delta [deg]");
+xlabel("Lateral acceleration a_y [m/s^2]");
+title("Steady state \delta vs a_y");
 grid on;
-legend('\gamma= 10\circ','\gamma= 5\circ','neutral','\gamma= -5\circ','\gamma= -10\circ','Location','Northwest');
+legend('\gamma= 10\circ','\gamma= 5\circ','neutral','\gamma= -5\circ','\gamma= -10\circ','Location','Southeast');
 

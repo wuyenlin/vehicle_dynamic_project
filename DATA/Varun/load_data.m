@@ -177,8 +177,8 @@ plot(step_data_r{k}(:,6),step_data_r{k}(:,2)*180/pi,'LineWidth',2);
 % title(lgd,'Camber Angles')
 legend("\gamma= -1\circ","\gamma= -5\circ","\gamma= -10\circ","\gamma= 1\circ","\gamma= 5\circ","\gamma= 10\circ", "neutral","Location","Southeast");
 xlabel('Time t [s]');
-ylabel('Side slip angle \alpha [deg]');
-title('Step Response: \alpha vs t');
+ylabel('Side slip angle \beta [deg]');
+title('Step Response: \beta vs t');
 xlim([20,37]);
 %ylim([-6e-3,-3e-3]);
 grid on

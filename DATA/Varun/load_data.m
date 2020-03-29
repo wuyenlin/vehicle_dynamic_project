@@ -187,27 +187,33 @@ grid minor
 figure(5)
 clear sine_data_r
 sine_data_r = cell(1,21);
-for i = [1,5,10]   % positive camber angles
+
+for i = [10]   % positive camber angles
     filename = ['csv\sinewave\sine',num2str(i),'neg.csv'];
     sine_data_r{i} = importdata(filename);
     hold on;
-    plot(sine_data_r{i}(:,6),sine_data_r{i}(:,2),'LineWidth',2);
+    plot(sine_data_r{i}(:,6),sine_data_r{i}(:,3),'LineWidth',2);
 end
+
 hold on;
-i=11;   % zero camber angles
+% zero camber angles
 filename = ['csv\sinewave\sine',num2str(0),'.csv'];
-sine_data_r{i} = importdata(filename);
+sine_data_r{11} = importdata(filename);
 hold on;
-%plot(sine_data_r{i}(:,6),sine_data_r{i}(:,2),'LineWidth',2);
-for i = [12,16,21]    % negative camber angles
+plot(sine_data_r{11}(:,6),sine_data_r{11}(:,3),'LineWidth',2);
+
+for i = [21]    % negative camber angles
     filename = ['csv\sinewave\sine',num2str(i-11),'pos.csv'];
     sine_data_r{i} = importdata(filename);
     hold on;
-    plot(sine_data_r{i}(:,6),sine_data_r{i}(:,2),'LineWidth',2);
+    plot(sine_data_r{i}(:,6),sine_data_r{i}(:,3),'LineWidth',2);
 end
-% lgd = legend('-1 deg','-5 deg','-10 deg','1 deg','5 deg','10 deg','0 deg');
-% title(lgd,'Camber Angles')
-legend("\gamma= -1\circ","\gamma= -5\circ","\gamma= -10\circ","\gamma= 1\circ","\gamma= 5\circ","\gamma= 10\circ", "neutral","Location","Southeast");
+
+legend("\gamma= -10\circ", "neutral","\gamma= 10\circ","Location","Southeast");
+%legend("\gamma= -1\circ","\gamma= -5\circ","\gamma= -10\circ","\gamma= 1\circ","\gamma= 5\circ","\gamma= 10\circ", "neutral","Location","Southeast");
 xlabel('Time t [s]');
-ylabel('Yaw velocity [rad/s]');
-title('Sine Response: Yaw velocity vs t');
+ylabel('Yaw rate r [rad/s]');
+title('Sine Response: r vs t');
+%axis([20 25 -0.4 0.4]);
+grid on;
+grid minor;

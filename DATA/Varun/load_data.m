@@ -183,31 +183,62 @@ xlim([20,37]);
 %ylim([-6e-3,-3e-3]);
 grid on
 grid minor
-%% Sine wave response in Yaw velocity
+%% Sine wave response in Yaw velocity (Yaw rate gain vs frequency (time))
 figure(5)
 clear sine_data_r
 sine_data_r = cell(1,21);
-for i = [1,5,10]   % positive camber angles
+for i = 10   % positive camber angles
     filename = ['csv\sinewave\sine',num2str(i),'neg.csv'];
     sine_data_r{i} = importdata(filename);
     hold on;
-    plot(sine_data_r{i}(:,6),sine_data_r{i}(:,2),'LineWidth',2);
+    plot(sine_data_r{i}(:,6),sine_data_r{i}(:,3),'LineWidth',1);
 end
 hold on;
 i=11;   % zero camber angles
 filename = ['csv\sinewave\sine',num2str(0),'.csv'];
 sine_data_r{i} = importdata(filename);
+plot(sine_data_r{i}(:,6),sine_data_r{i}(:,3),'LineWidth',1);
 hold on;
 %plot(sine_data_r{i}(:,6),sine_data_r{i}(:,2),'LineWidth',2);
-for i = [12,16,21]    % negative camber angles
+for i = 21    % negative camber angles
     filename = ['csv\sinewave\sine',num2str(i-11),'pos.csv'];
     sine_data_r{i} = importdata(filename);
     hold on;
-    plot(sine_data_r{i}(:,6),sine_data_r{i}(:,2),'LineWidth',2);
+    plot(sine_data_r{i}(:,6),sine_data_r{i}(:,3),'LineWidth',1);
 end
 % lgd = legend('-1 deg','-5 deg','-10 deg','1 deg','5 deg','10 deg','0 deg');
 % title(lgd,'Camber Angles')
-legend("\gamma= -1\circ","\gamma= -5\circ","\gamma= -10\circ","\gamma= 1\circ","\gamma= 5\circ","\gamma= 10\circ", "neutral","Location","Southeast");
+legend("\gamma= -10\circ","\gamma= 0\circ","\gamma= 10\circ","Location","Southeast");
 xlabel('Time t [s]');
-ylabel('Yaw velocity [rad/s]');
+ylabel('Yaw rate gain [1/sec]');
 title('Sine Response: Yaw velocity vs t');
+grid on
+grid minor
+xlim([20,25]);
+[pks(:,1),locs(:,1)] = findpeaks(sine_data_r{10}([2001:2501],3));
+[pks(:,2),locs(:,2)] = findpeaks(sine_data_r{11}([2001:2501],3));
+[pks(:,3),locs(:,3)] = findpeaks(sine_data_r{21}([2001:2501],3));
+gain_ratio(1) = max(pks(:,1))/pks(1,1);
+gain_ratio(2) = max(pks(:,2))/pks(1,2);
+gain_ratio(3) = max(pks(:,3))/pks(1,3);
+%plotting the peaks of the data 
+figure(6);
+[curve1,~] = fit(locs(:,1),pks(:,1),'smoothingspline');
+plot(curve1,'r');
+hold on
+[curve2,~] = fit(locs(:,2),pks(:,2),'smoothingspline');
+plot(curve2,'b');
+hold on
+[curve3,~] = fit(locs(:,3),pks(:,3),'smoothingspline');
+plot(curve3,'y');
+grid on
+grid minor
+xlabel('Frequency');
+ylabel('Yaw rate gain');
+title('Yaw rate gain vs frequency');
+legend("\gamma= -10\circ","\gamma= 0\circ","\gamma= 10\circ","Location","Southeast");
+
+
+
+
+

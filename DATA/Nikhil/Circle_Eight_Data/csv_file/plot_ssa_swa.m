@@ -39,13 +39,13 @@ figure(12);
 for i = 1:size(data,2)   
     hold on;
     %plot(data{i}.data(1000:end-500,7), data{i}.data(1000:end-500,8)*180/pi,'LineWidth',2);
-    plot(data{i}.data(:,7), data{i}.data(:,8)*180/pi,'LineWidth',2);
+    plot(data{i}.data(:,8)*180/pi, data{i}.data(:,7),'LineWidth',2);
 end
 grid on;
 grid minor;
 legend('\gamma= 5\circ','\gamma= 10\circ','\gamma= -5\circ','\gamma= -10\circ','neutral','Location','Southeast');
-ylabel("Steering angle \delta [deg]");
-xlabel("Lateral acceleration a_y [m/s^2]");
+xlabel("Steering angle \delta [deg]");
+ylabel("Lateral acceleration a_y [m/s^2]");
 title("Steady state \delta vs a_y");
 %axis([-2 10 -20 140]);
 %% yaw rate -delta
@@ -53,7 +53,7 @@ figure(2);
 for i = 1:size(data,2)   
     hold on;
     %plot(data{i}.data(1000:end-500,7), data{i}.data(1000:end-500,8)*180/pi,'LineWidth',2);
-    plot(data{i}.data(800:end-500,8)*180/pi,data{i}.data(800:end-500,6),'LineWidth',2);
+    plot(data{i}.data(800:end-500,6),data{i}.data(800:end-500,8)*180/pi,'LineWidth',2);
 end
 grid on;
 grid minor;

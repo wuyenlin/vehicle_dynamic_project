@@ -184,6 +184,7 @@ xlim([20,37]);
 grid on
 grid minor
 %% Sine wave response in Yaw velocity (Yaw rate gain vs frequency (time))
+clear all
 figure(5)
 clear sine_data_r
 sine_data_r = cell(1,21);
@@ -211,32 +212,40 @@ end
 legend("\gamma= -10\circ","\gamma= 0\circ","\gamma= 10\circ","Location","Southeast");
 xlabel('Time t [s]');
 ylabel('Yaw rate gain [1/sec]');
-title('Sine Response: Yaw velocity vs t');
+title('Sinosoidal steering Response: Yaw velocity vs frequency');
 grid on
 grid minor
-xlim([20,25]);
-[pks(:,1),locs(:,1)] = findpeaks(sine_data_r{10}([2001:2501],3));
-[pks(:,2),locs(:,2)] = findpeaks(sine_data_r{11}([2001:2501],3));
-[pks(:,3),locs(:,3)] = findpeaks(sine_data_r{21}([2001:2501],3));
+xlim([20,55]);
+ylim([0 0.4]);
+xticks([20 25 30 35 40 45 50 55]);
+xticklabels({'f = 0.2','f = 0.5','f = 0.8','f = 1','f = 2','f = 3','f = 4','f = 5.5'});
+[pks(:,1),locs(:,1)] = findpeaks(sine_data_r{10}([2001:5501],3));
+[pks(:,2),locs(:,2)] = findpeaks(sine_data_r{11}([2001:5501],3));
+[pks(:,3),locs(:,3)] = findpeaks(sine_data_r{21}([2001:5501],3));
 gain_ratio(1) = max(pks(:,1))/pks(1,1);
 gain_ratio(2) = max(pks(:,2))/pks(1,2);
 gain_ratio(3) = max(pks(:,3))/pks(1,3);
 %plotting the peaks of the data 
 figure(6);
 [curve1,~] = fit(locs(:,1),pks(:,1),'smoothingspline');
-plot(curve1,'r');
+p1 = plot(curve1);
+set(p1,'LineWidth',2,'Color',[0.6350 0.0780 0.1840]);
 hold on
 [curve2,~] = fit(locs(:,2),pks(:,2),'smoothingspline');
-plot(curve2,'b');
+p2 = plot(curve2,'b');
+set(p2,'LineWidth',2,'Color',[0 0.4470 0.7410]);
 hold on
 [curve3,~] = fit(locs(:,3),pks(:,3),'smoothingspline');
-plot(curve3,'y');
+p3 = plot(curve3,'y');
+set(p3,'LineWidth',2,'Color',[0.9290 0.6940 0.1250]);
 grid on
 grid minor
-xlabel('Frequency');
+xlabel('Time (sec)');
 ylabel('Yaw rate gain');
 title('Yaw rate gain vs frequency');
 legend("\gamma= -10\circ","\gamma= 0\circ","\gamma= 10\circ","Location","Southeast");
+xticks([0 500 1000 1500 2000 2500 3000 3500]);
+xticklabels({'f = 0.2','f = 0.5','f = 0.8','f = 1','f = 2','f = 3','f = 4','f = 5.5'});
 
 
 

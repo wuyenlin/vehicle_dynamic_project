@@ -210,7 +210,7 @@ end
 % lgd = legend('-1 deg','-5 deg','-10 deg','1 deg','5 deg','10 deg','0 deg');
 % title(lgd,'Camber Angles')
 legend("\gamma= -10\circ","\gamma= 0\circ","\gamma= 10\circ","Location","Southeast");
-xlabel('Time t [s]');
+xlabel('Frequency [Hz]');
 ylabel('Yaw rate gain [1/sec]');
 title('Sinosoidal steering Response: Yaw velocity vs frequency');
 grid on
@@ -240,9 +240,9 @@ p3 = plot(curve3,'y');
 set(p3,'LineWidth',2,'Color',[0.9290 0.6940 0.1250]);
 grid on
 grid minor
-xlabel('Time (sec)');
-ylabel('Yaw rate gain');
-title('Yaw rate gain vs frequency');
+xlabel('Frequency [Hz]');
+ylabel('Yaw rate gain ratio');
+title('Yaw rate gain ratio vs frequency');
 legend("\gamma= -10\circ","\gamma= 0\circ","\gamma= 10\circ","Location","Southeast");
 xticks([0 500 1000 1500 2000 2500 3000 3500]);
 xticklabels({'f = 0.2','f = 0.5','f = 0.8','f = 1','f = 2','f = 3','f = 4','f = 5.5'});

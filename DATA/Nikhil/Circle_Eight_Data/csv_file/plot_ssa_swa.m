@@ -39,7 +39,7 @@ figure(12);
 for i = 1:size(data,2)   
     hold on;
     %plot(data{i}.data(1000:end-500,7), data{i}.data(1000:end-500,8)*180/pi,'LineWidth',2);
-    plot(data{i}.data(:,8)*180/pi, data{i}.data(:,7),'LineWidth',2);
+    plot(data{i}.data(800:end-500,8)*180/pi, data{i}.data(800:end-500,7),'LineWidth',2);
 end
 grid on;
 grid minor;

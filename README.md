@@ -11,6 +11,7 @@ This report studies the driving experience of different camber angles (-10 deg t
 
 The simulation is conducted on IPG CarMaker software, whose results (in .csv) are uploaded and sorted in folders.
 
+![](https://i.imgur.com/OAWb3Lv.png)
 
 ## Abstract
 

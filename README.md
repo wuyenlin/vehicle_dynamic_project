@@ -1,8 +1,8 @@
-# Vehicle-Dyanmics-Project
+# Effects of Camber Angle on a Sports Car Steering Response
 
 ## Introduction
 
-This project is a collaboration of MSc students of Mechanical Engineering at TU Delft, including Varun Kotian, Nikhil Nagendra, Shantanu Shivankar , Yen-Lin Wu, and a master student at KTH, Filip Berggren. 
+This project is a collaboration of MSc Mechanical Engineering students at TU Delft, including Varun Kotian, Nikhil Nagendra, Shantanu Shivankar, Yen-Lin Wu, and a master student at KTH, Filip Berggren. 
 This is a repository for the final project of the course Vehicle Dynamics (ME41100) at TU Delft.
 This report studies the driving experience of different camber angles (-10 deg to 10 deg) on a sports car in 3 different driving scenarios: 
 1. a steady-state turn,
